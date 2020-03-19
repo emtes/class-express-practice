@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Our Book List</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/milligram.css">
+  <title>Our Book List</title>
+</head>
 
-  <body>
-    <h1><%= name %>'s Book List</h1>
-
-  </body>
+<body>
+  <header>
+    <h1>Enmanuel's Book List</h1>
+    <a href="/add" class="button">Add Book</a>
+  </header>
+  <!-- Book card -->
+  <% for (const id in books) { %>
+  <div class="book-card">
+    <img src="<%= books[id].imageURL%>" alt="">
+    <h3 class="title"><%= books[id].title%></h3>
+    <p class="author"></p>
+    <form action="/delete/<%=id%>" method="post">
+      <input type="submit" value="Delete Book">
+    </form>
+  </div>
+  <% } %>
+  <!-- /// -->
+</body>
 
 </html>
