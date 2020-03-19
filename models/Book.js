@@ -1,10 +1,10 @@
 class Book {
-  constructor(title, author, description, imageURL) {
+  constructor(title, author, imageURL, description) {
     this.id = ++Book.count;
     this.title = title;
     this.author = author;
-    this.description = description;
     this.imageURL = imageURL;
+    this.description = description;
     this.dateAdded = new Date();
   }
 }
