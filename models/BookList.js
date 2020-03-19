@@ -13,11 +13,11 @@ class BookList {
     const deletedBook = this.books[id];
     delete this.books[id];
     this.count -= 1;
-    return deletedBook
+    return deletedBook;
   }
 
   deleteAllBooks() {
-    this.books = {}
+    this.books = {};
     this.count = 0;
   }
 }
